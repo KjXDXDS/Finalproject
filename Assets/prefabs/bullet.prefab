@@ -96,9 +96,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 1
   Speed: 350
-  PushForce: 500
+  PushForce: 1
   Lifetime:
-    Duration: 80
+    Duration: 5
     CurrentProgress: 0
   TargetLayerMask:
     serializedVersion: 2

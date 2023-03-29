@@ -22,7 +22,7 @@ public class Projectile : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+  
     void Update()
     {
         if (Lifetime.CurrentProgress != cooldown.Progress.Finished)
@@ -38,14 +38,15 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+
         if (!((TargetLayerMask.value & (1 << col.gameObject.layer)) > 0))
             return;
 
         Rigidbody2D targetRigidbody = col.gameObject.GetComponent<Rigidbody2D>();
 
-        if ( targetRigidbody != null ) 
+        if (targetRigidbody != null)
         {
-            targetRigidbody.AddForce((col.transform.position - transform.position).normalized * PushForce); 
+            targetRigidbody.AddForce((col.transform.position - transform.position).normalized * PushForce);
         }
 
         Health targetHealth = col.gameObject.GetComponent<Health>();
@@ -58,7 +59,7 @@ public class Projectile : MonoBehaviour
         Die();
 
 
-            
+
 
     }
 }

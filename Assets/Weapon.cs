@@ -15,6 +15,7 @@ public class Weapon : MonoBehaviour
     {
         set {isFlip = value;}   
     }
+    private bool _isFlip = false;
 
     void Update()
     {
@@ -28,6 +29,10 @@ public class Weapon : MonoBehaviour
             return;
 
         GameObject bullet = GameObject.Instantiate(Projectile,Spawnpos.position ,Spawnpos.rotation);
+
+
+         if (_isFlip)
+                bullet.GetComponent<Projectile>().Speed *= -1;
 
         ShootInterval.Startcooldown();
         
