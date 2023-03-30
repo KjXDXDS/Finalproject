@@ -11,9 +11,9 @@ public class Weapon : MonoBehaviour
 
 
 
-    public bool isFlip
+    public bool IsFlip
     {
-        set {isFlip = value;}   
+        set { _isFlip = value;}   
     }
     private bool _isFlip = false;
 

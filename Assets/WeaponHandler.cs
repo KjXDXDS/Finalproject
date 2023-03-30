@@ -59,11 +59,14 @@ public class WeaponHandler : MonoBehaviour
         {
             CurrentWeapon.transform.position = leftweaponposition.position;
             CurrentWeapon.transform.localScale = new Vector3(-1, 1, 1);
+            CurrentWeapon.IsFlip = true;
         }
         else
         {
             CurrentWeapon.transform.position = rightweaponposition.position;
             CurrentWeapon.transform.localScale = Vector3.one;
+            CurrentWeapon.IsFlip = false;
+
         }
 
 

@@ -95,14 +95,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 1
-  Speed: 350
+  Speed: 1000
   PushForce: 1
   Lifetime:
-    Duration: 5
+    Duration: 2.5
     CurrentProgress: 0
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 448
+    m_Bits: 384
 --- !u!1 &1850153791658596453
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ Transform:
   m_GameObject: {fileID: 1850153791658596453}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.2875, z: 1}
+  m_LocalScale: {x: 0.67031246, y: 0.11266406, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1850153790988065535}
