@@ -42,34 +42,33 @@ public class WeaponHandler : MonoBehaviour
 
     protected virtual void HandleWeapon()
     {
-        if (CurrentWeapon == null) 
+        if (CurrentWeapon == null)
             return;
 
-        bool isFlip = false;
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if ( _movement != null && _movement.FlipAnim)
-            isFlip = true;
+        bool isFlip = (mousePos.x > transform.position.x) ? false : true;
 
+        Vector2 gunPos = isFlip ? leftweaponposition.position : rightweaponposition.position;
+        Vector2 direction = isFlip ? gunPos - mousePos : mousePos - gunPos;
 
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        CurrentWeapon.transform.position = gunPos;
+        CurrentWeapon.transform.localScale = isFlip ? new Vector3(-1, 1, 1) : Vector3.one;
+        CurrentWeapon.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
+        CurrentWeapon.IsFlip = isFlip;
 
+        _movement.FlipAnim = isFlip;
 
-        if ( isFlip )
+        if (_tryShoot)
+            CurrentWeapon.Shoot();
+    }
 
-        {
-            CurrentWeapon.transform.position = leftweaponposition.position;
-            CurrentWeapon.transform.localScale = new Vector3(-1, 1, 1);
-            CurrentWeapon.IsFlip = true;
-        }
-        else
-        {
-            CurrentWeapon.transform.position = rightweaponposition.position;
-            CurrentWeapon.transform.localScale = Vector3.one;
-            CurrentWeapon.IsFlip = false;
-
-        }
-
+    public void EquipWeapon(Weapon weapon)
+    {
+        if (weapon != null)
+            CurrentWeapon = weapon;
 
     }
-    
 }

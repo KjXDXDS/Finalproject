@@ -209,9 +209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83285125eea4a04fb789566249fd051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Deathparticles: {fileID: 0}
+  Deathparticles: {fileID: 4965413178753048629, guid: d8a4397885336fc4db2fa74666afb082, type: 3}
   Invulnerable:
     Duration: 1
     CurrentProgress: 0
-  _currentHealth: 10
+  _currentHealth: 2
   _canDamage: 1

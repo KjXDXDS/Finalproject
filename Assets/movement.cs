@@ -19,7 +19,7 @@ public class movement : MonoBehaviour
     public PhysicsMaterial2D Default;
     public PhysicsMaterial2D FullFriction;
     public PhysicsMaterial2D slip;
-    private bool _disableInput = false;
+    protected bool _disableInput = false;
     public bool IsRunning
     {
     get 
@@ -49,7 +49,7 @@ public class movement : MonoBehaviour
     protected RaycastHit2D _groundHit;
     protected RaycastHit2D _slopeHit;
     public float _slopeAngle = 0f;
-    private Health _health;
+    protected Health _health;
 
     protected Vector2 _slopeHitNormal = Vector2.zero;
     public bool _isOnSlope = false;

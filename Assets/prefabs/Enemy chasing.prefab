@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2948517971213267127}
   - component: {fileID: 2948517971213267126}
   - component: {fileID: -8374741886328601207}
+  - component: {fileID: 5770227811893287044}
   m_Layer: 7
   m_Name: Enemy chasing
   m_TagString: Untagged
@@ -128,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19f0a3514104a5348acd0dd50a22c699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 0.5
+  Acceleration: 3
   Jumpforce: 50
   MaxSlopeAngle: 30
   GroundLayerMask:
@@ -228,3 +229,19 @@ MonoBehaviour:
     CurrentProgress: 0
   _currentHealth: 10
   _canDamage: 1
+--- !u!70 &5770227811893287044
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2948517971213267020}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.54, y: 0.52}
+  m_Direction: 0
