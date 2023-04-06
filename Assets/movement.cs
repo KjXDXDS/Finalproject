@@ -60,6 +60,8 @@ public class movement : MonoBehaviour
     protected bool _IsJumping = false;
     protected bool _CanJump = true;
 
+    public float Pushforce = 3f;
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -82,7 +84,7 @@ public class movement : MonoBehaviour
         }
     }
 
-    private void Hit(GameObject source)
+    protected virtual void Hit(GameObject source)
 
 
     {
@@ -91,16 +93,16 @@ public class movement : MonoBehaviour
         {
             if ( source.transform.position.x < transform.position.x ) 
             {
-                pushHorizontal = Jumpforce;
+                pushHorizontal = Pushforce;
             }
             else
             {
-                pushHorizontal = -Jumpforce;
+                pushHorizontal = -Pushforce;
             }
         }
 
 
-        _rigidbody.velocity = new Vector2(pushHorizontal,Jumpforce);
+        _rigidbody.velocity = new Vector2(pushHorizontal,Pushforce);
 
         _disableInput= true ;
     }

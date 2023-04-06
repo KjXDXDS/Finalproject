@@ -46,7 +46,10 @@ public class Projectile : MonoBehaviour
 
         if (targetRigidbody != null)
         {
-            targetRigidbody.AddForce((col.transform.position - transform.position).normalized * PushForce);
+            Vector3 pushDirection = (col.transform.position - transform.position).normalized* PushForce;
+
+   
+            targetRigidbody.AddForce(pushDirection);
         }
 
         Health targetHealth = col.gameObject.GetComponent<Health>();

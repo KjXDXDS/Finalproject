@@ -147,6 +147,7 @@ MonoBehaviour:
   _slopeAngle: 0
   _isOnSlope: 0
   _canWalkOnSlope: 0
+  Pushforce: 1
 --- !u!114 &2489397855025960470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83285125eea4a04fb789566249fd051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Deathparticles: {fileID: 4965413178753048629, guid: d8a4397885336fc4db2fa74666afb082, type: 3}
+  Deathparticles: {fileID: 6231257127552746212, guid: 80d9de5f31d8c2249b40d2143533fdfe, type: 3}
   Invulnerable:
     Duration: 1
     CurrentProgress: 0

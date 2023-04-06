@@ -16,6 +16,8 @@ public class gamemanager : MonoBehaviour
 
     public string NextSceneName = "";
 
+    public string coinscene = "";
+
     public void LoadScene()
     {
 
@@ -50,6 +52,22 @@ public class gamemanager : MonoBehaviour
             LoadGame();      
     }
 
+
+    public void IDie(GameObject obj)
+    {
+        
+            if (obj.CompareTag("Player"))
+            {
+            Debug.Log("plaayer died");
+                SceneManager.LoadScene(coinscene);
+            }
+
+
+
+            Debug.Log(obj.name + " died");  
+        
+
+    }
 
    
 }

@@ -147,6 +147,7 @@ MonoBehaviour:
   _slopeAngle: 0
   _isOnSlope: 0
   _canWalkOnSlope: 0
+  Pushforce: 1
   Target: {fileID: 0}
 --- !u!50 &2948517971213267019
 Rigidbody2D:
@@ -207,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e23f74513dcfcd4682c6ad1d0d705ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 5
+  Damage: 2
   TargetLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -223,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83285125eea4a04fb789566249fd051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Deathparticles: {fileID: 4965413178753048629, guid: d8a4397885336fc4db2fa74666afb082, type: 3}
+  Deathparticles: {fileID: 6231257127552746212, guid: 80d9de5f31d8c2249b40d2143533fdfe, type: 3}
   Invulnerable:
     Duration: 1
     CurrentProgress: 0

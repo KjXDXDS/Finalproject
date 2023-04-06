@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +16,8 @@ public class Health : MonoBehaviour
     public ResetEvent OnHitReset;
 
     public GameObject Deathparticles;
+
+    private gamemanager gamemanager;
 
     
 
@@ -71,6 +74,13 @@ public class Health : MonoBehaviour
 
     public void Die () 
     {
+        if (gamemanager != null)
+        {
+            gamemanager.IDie(this.gameObject);
+
+        }
+
+
         GameObject.Instantiate(Deathparticles,transform.position,transform.rotation);
         Debug.Log("died");
         Destroy(this.gameObject);

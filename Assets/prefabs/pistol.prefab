@@ -107,7 +107,7 @@ MonoBehaviour:
   Projectile: {fileID: 1850153790988065531, guid: ec7f2b748f4c8a94b854c5c2dcb5fa5b, type: 3}
   Spawnpos: {fileID: 8820143019722495417}
   ShootInterval:
-    Duration: 0.5
+    Duration: 0.1
     CurrentProgress: 0
 --- !u!1 &6086321728450233722
 GameObject:

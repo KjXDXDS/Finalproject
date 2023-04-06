@@ -11,5 +11,20 @@ public class playermovement : movement
         if(Input.GetButtonDown("Jump"))
             DoJump();
 
+
+
     }
+
+    protected override void Hit(GameObject source)
+    {
+        base.Hit(source);
+        _rigidbody.gravityScale = 1f;
+    }
+
+    protected override void ResetMove()
+    {
+        base.ResetMove();
+        _rigidbody.gravityScale = 7f;
+    }
+
 }
