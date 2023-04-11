@@ -24,7 +24,7 @@ public class enemychasing : movement
         }
         if (_rigidbody == null)
         {
-            //Debug.Log("no rigidbody");
+            //Debug.Log("no rigidbody");s
             return;
         }
 

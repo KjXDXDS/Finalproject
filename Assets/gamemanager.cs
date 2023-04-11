@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class gamemanager : MonoBehaviour
-
-
 {
 
     public int CoinsCollected = 0;
@@ -15,6 +14,8 @@ public class gamemanager : MonoBehaviour
     public Text ScoreDisplay;
 
     public string NextSceneName = "";
+
+    public string Respown = "";
 
     public string coinscene = "";
 
@@ -29,6 +30,12 @@ public class gamemanager : MonoBehaviour
         SceneManager.LoadScene(NextSceneName);
     }
 
+    public void Restartlevel()
+    {
+        SceneManager.LoadScene(Respown);
+
+    }
+
     public void SaveGame()
     {
         PlayerPrefs.SetInt("CoinsCollected", CoinsCollected);
@@ -39,27 +46,29 @@ public class gamemanager : MonoBehaviour
     {
         CoinsCollected = PlayerPrefs.GetInt("SavedCoinsCollected");
     }
-    //private void Update()
-    //{
-    //    if (ScoreDisplay == null)
-    //        return;
-
-    //    ScoreDisplay.text = CoinsCollected.ToString();
-    //}
+  
 
     public void Start()
     {
             LoadGame();      
     }
 
+    private void Update()
+    {
+        if (ScoreDisplay == null)
+            return;
 
+        ScoreDisplay.text = CoinsCollected.ToString();
+
+
+    }
     public void IDie(GameObject obj)
     {
         
             if (obj.CompareTag("Player"))
             {
-            Debug.Log("plaayer died");
-                SceneManager.LoadScene(coinscene);
+                 Debug.Log("player died");
+                SceneManager.LoadScene(Respown);
             }
 
 
@@ -69,5 +78,10 @@ public class gamemanager : MonoBehaviour
 
     }
 
-   
+   public void AddScore(int score)
+    {
+        CoinsCollected += score;
+        Debug.Log("coins collected " + CoinsCollected);
+
+    }
 }

@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
 
     public GameObject Deathparticles;
 
-    private gamemanager gamemanager;
+    private gamemanager _gamemanager;
 
     
 
@@ -74,10 +74,10 @@ public class Health : MonoBehaviour
 
     public void Die () 
     {
-        if (gamemanager != null)
+        if (_gamemanager != null)
         {
-            gamemanager.IDie(this.gameObject);
-
+            _gamemanager.IDie(this.gameObject);
+           
         }
 
 

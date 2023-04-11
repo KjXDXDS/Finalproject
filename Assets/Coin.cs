@@ -29,15 +29,19 @@ public class Coin : MonoBehaviour
 
         Debug.Log("picked up " + CoinsAmount);
             Destroy(gameObject);
-
-
-
-
-
-
         
     }
 
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!collision.gameObject.CompareTag("Player"))
+            return;
+
+
+        if (_gamemanager != null)
+            _gamemanager.CoinsCollected += CoinsAmount;
+
+        Destroy(gameObject);
+    }
 
 }
