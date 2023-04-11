@@ -34086,9 +34086,17 @@ PrefabInstance:
       propertyPath: CurrentWeapon
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 442191348651119319, guid: 02a62a4406cc1bb4695c2d3bdc45c0e3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 442191349139502746, guid: 02a62a4406cc1bb4695c2d3bdc45c0e3, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 442191349333385246, guid: 02a62a4406cc1bb4695c2d3bdc45c0e3, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02a62a4406cc1bb4695c2d3bdc45c0e3, type: 3}
@@ -34599,6 +34607,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1098563839664617663, guid: a7376ca5d03fe47449d9afad986f3548, type: 3}
+      propertyPath: Respown
+      value: firstscene
+      objectReference: {fileID: 0}
     - target: {fileID: 1098563839664617663, guid: a7376ca5d03fe47449d9afad986f3548, type: 3}
       propertyPath: coinscene
       value: firstscene
