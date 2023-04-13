@@ -8,8 +8,12 @@ public class Weapon : MonoBehaviour
     public Transform Spawnpos;
     public cooldown ShootInterval;
 
+    protected AudioSource _audioSource;
 
-
+    private void Start()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     public bool IsFlip
     {
@@ -36,5 +40,6 @@ public class Weapon : MonoBehaviour
 
         ShootInterval.Startcooldown();
         
+        if(_audioSource != null) _audioSource.Play();
     }
 }

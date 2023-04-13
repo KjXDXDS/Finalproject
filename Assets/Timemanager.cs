@@ -43,7 +43,7 @@ public class Timemanager : MonoBehaviour
 
         CurrentTime -= Time.deltaTime;
 
-        OnTime.Invoke((int)CurrentTime);
+        OnTime?.Invoke((int)CurrentTime);
 
 
     }

@@ -51,7 +51,7 @@ public class Spawner : MonoBehaviour
             _spawnTimer = SpawnInterval;
         }
 
-        Debug.Log("should spawn");
+        //Debug.Log("should spawn");
 
         GameObject.Instantiate(PipesPrefabs[randomPipe], transform.position, Quaternion.identity);
     }

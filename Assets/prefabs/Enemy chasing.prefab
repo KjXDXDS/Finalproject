@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19f0a3514104a5348acd0dd50a22c699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 3
+  Acceleration: 5
   Jumpforce: 50
   MaxSlopeAngle: 30
   GroundLayerMask:

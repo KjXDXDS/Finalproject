@@ -21,6 +21,8 @@ public class Health : MonoBehaviour
 
     
 
+    
+
     public float CurrentHealth
     { 
         get 
@@ -74,15 +76,13 @@ public class Health : MonoBehaviour
 
     public void Die () 
     {
-        if (_gamemanager != null)
-        {
-            _gamemanager.IDie(this.gameObject);
-           
-        }
+        _gamemanager = FindObjectOfType<gamemanager>();
+        _gamemanager.IDie(this.gameObject);
+
 
 
         GameObject.Instantiate(Deathparticles,transform.position,transform.rotation);
-        Debug.Log("died");
+        //Debug.Log("died");
         Destroy(this.gameObject);
 
     

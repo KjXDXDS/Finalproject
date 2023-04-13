@@ -15,7 +15,10 @@ public class gamemanager : MonoBehaviour
 
     public string NextSceneName = "";
 
-    public string Respown = "";
+    public backtomainmenu backtomainmenu;
+
+    
+
 
     public string coinscene = "";
 
@@ -32,8 +35,10 @@ public class gamemanager : MonoBehaviour
 
     public void Restartlevel()
     {
-        SceneManager.LoadScene(Respown);
+        Scene currentScene = SceneManager.GetActiveScene();
+        //Debug.Log(currentScene.name);
 
+        SceneManager.LoadScene(currentScene.name);
     }
 
     public void SaveGame()
@@ -51,30 +56,38 @@ public class gamemanager : MonoBehaviour
     public void Start()
     {
             LoadGame();      
+
+       
+       
     }
 
     private void Update()
     {
+          
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("should run restart");
+            Restartlevel();
+        }
         if (ScoreDisplay == null)
             return;
 
         ScoreDisplay.text = CoinsCollected.ToString();
 
-
     }
     public void IDie(GameObject obj)
     {
         
-            if (obj.CompareTag("Player"))
-            {
-                 Debug.Log("player died");
-                SceneManager.LoadScene(Respown);
-            }
+        if (obj.CompareTag("Player"))
+        {
+            
+            Debug.Log("player died");
+            backtomainmenu.LoadMainMenu();
 
+            //SceneManager.LoadScene(Respown);
 
-
-            Debug.Log(obj.name + " died");  
-        
+        }
+                
 
     }
 
