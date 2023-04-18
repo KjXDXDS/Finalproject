@@ -46,6 +46,9 @@ public class movement : MonoBehaviour
     public float _lastSlopAngle;
 
 
+    private AudioSource _audioSource;
+    public AudioClip _audioClip;
+
     protected RaycastHit2D _groundHit;
     protected RaycastHit2D _slopeHit;
     public float _slopeAngle = 0f;
@@ -64,6 +67,7 @@ public class movement : MonoBehaviour
 
     void Start()
     {
+        _audioSource= GetComponent<AudioSource>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _health = GetComponent<Health>();
         
@@ -197,6 +201,7 @@ public class movement : MonoBehaviour
         _IsJumping = true;
        
         Debug.Log("Jumping");
+        _audioSource.PlayOneShot(_audioClip);
         _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, Jumpforce);
         CoyoteTime.Stopcooldown();
     }

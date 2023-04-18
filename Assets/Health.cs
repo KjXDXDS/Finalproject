@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,8 @@ public class Health : MonoBehaviour
     public delegate void HHitEvent(GameObject source);
 
     public HHitEvent OnHit;
+
+   
 
   
     public delegate void ResetEvent();
@@ -36,9 +39,10 @@ public class Health : MonoBehaviour
 
     public float _currentHealth = 10f;
 
-    public bool _canDamage = true; 
+    public bool _canDamage = true;
 
 
+  
     private void Update()
     {
         ResetInvulnerable();
@@ -74,16 +78,24 @@ public class Health : MonoBehaviour
         OnHit?.Invoke(source);
     }
 
-    public void Die () 
+    public virtual void Die () 
     {
         _gamemanager = FindObjectOfType<gamemanager>();
         _gamemanager.IDie(this.gameObject);
 
 
 
+
         GameObject.Instantiate(Deathparticles,transform.position,transform.rotation);
         //Debug.Log("died");
+
+
+    
+
+
         Destroy(this.gameObject);
+
+
 
     
        
