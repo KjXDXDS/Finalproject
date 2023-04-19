@@ -49,6 +49,7 @@ public class Coinspawner : MonoBehaviour
             spawnTimer -= Time.deltaTime;
             // isSpawning = false;
         }
+
         else
         {
             float diceroll = Random.Range(0f, 100f);
