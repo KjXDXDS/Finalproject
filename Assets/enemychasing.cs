@@ -9,9 +9,13 @@ public class enemychasing : movement
 {
     public Transform Target;
 
+    public bool StartChasing = false;
  
     protected override void HandleInput()
     {
+        if (!StartChasing)
+            return;
+
         if (Target == null)
         {
             //Debug.Log("no target");

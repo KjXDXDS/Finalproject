@@ -179,7 +179,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fda15c11657cbf54ba7929b47cfb1969, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -275,7 +275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61672a9d0be3075499f44c51b9f1db64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 0}
   Deathparticles: {fileID: 4965413178753048629, guid: d8a4397885336fc4db2fa74666afb082, type: 3}
   Invulnerable:
     Duration: 1

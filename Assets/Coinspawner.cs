@@ -1,24 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Coinspawner : MonoBehaviour
 {
+    public int CoinAmount = 50;
     public GameObject CoinPrefab;
-    public GameObject RareCoinPrefab;
+    bool _isTimeUp  = false;
+    bool _startSpawning = false;
 
-    public Vector2 MinMaxPos;
+    public AudioClip _audioClip;
 
-    public float RareSpawnChance = 0.1f;
+    private AudioSource _audioSource;
 
-    public float SpawnInterval = 1f;
+    
 
-    public bool isSpawning = false;
 
-    public float spawnTimer;
-
-    private bool _isTimeUp = false;
-
+    private int _currentCoins = 50;
     private void OnEnable()
     {
         Timemanager.OnEnd += GameEnd;
@@ -29,44 +28,51 @@ public class Coinspawner : MonoBehaviour
         Timemanager.OnEnd -= GameEnd;
     }
 
-    private void Start()
+
+    void Start()
     {
-        spawnTimer = SpawnInterval;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if (isSpawning)
-        //     return;
-
-        if (_isTimeUp)
+        if (!_startSpawning)
             return;
 
+        if (_currentCoins <= 0)
+            return;
 
-        if (spawnTimer > 0)
+        GameObject.Instantiate(CoinPrefab, transform.position, Quaternion.Euler(0, 0, Random.Range(-360, 360)));
+
+        _currentCoins--;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
         {
-            spawnTimer -= Time.deltaTime;
-            // isSpawning = false;
+            _currentCoins = CoinAmount;
+
+            _startSpawning = true;
         }
 
-        else
+
+        if (collision.tag != "Player") return;
+
+        if (_audioSource != null)
         {
-            float diceroll = Random.Range(0f, 100f);
+            _audioSource.Play();
+        }
+    }
 
-            if (diceroll <= RareSpawnChance)
-            {
-                GameObject.Instantiate(RareCoinPrefab, transform.position, Quaternion.Euler(0, 0, Random.Range(-360, 360)));
-            }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag != "Player") return;
 
-            else
-            {
-                GameObject.Instantiate(CoinPrefab, transform.position, Quaternion.Euler(0, 0, Random.Range(-360, 360)));
-            
-            }
-
-            // isSpawning = true;
-            spawnTimer = SpawnInterval;
+        if (_audioSource != null)
+        {
+            _audioSource.Stop();
         }
     }
 

@@ -65,7 +65,7 @@ public class Spawner : MonoBehaviour
             return;
         }
 
-        Debug.Log("setting higher difficulty");
+        //Debug.Log("setting higher difficulty");
 
         _spawnDifficultyAccu += SpawnDifficultyAccuAmount;
         _spawnDifficultyTimer = SpawnDifficultyInterval;

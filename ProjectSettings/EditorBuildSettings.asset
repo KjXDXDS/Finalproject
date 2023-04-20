@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/coins.unity
     guid: 645d12d799471ae478c941980165baae
+  - enabled: 1
+    path: Assets/Scenes/endingscene.unity
+    guid: 98216c222ac63074ea506d174c5acdb6
   m_configObjects: {}

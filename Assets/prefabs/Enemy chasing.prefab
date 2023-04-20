@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 2948517971213267019}
   - component: {fileID: 2948517971213267127}
   - component: {fileID: 2948517971213267126}
-  - component: {fileID: -8374741886328601207}
   - component: {fileID: 5770227811893287044}
+  - component: {fileID: -4773562089403980841}
+  - component: {fileID: 5793469002055834647}
   m_Layer: 7
   m_Name: Enemy chasing
   m_TagString: Untagged
@@ -151,6 +152,7 @@ MonoBehaviour:
   _canWalkOnSlope: 0
   Pushforce: 1
   Target: {fileID: 0}
+  StartChasing: 0
 --- !u!50 &2948517971213267019
 Rigidbody2D:
   serializedVersion: 4
@@ -214,24 +216,6 @@ MonoBehaviour:
   TargetLayerMask:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &-8374741886328601207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2948517971213267020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c83285125eea4a04fb789566249fd051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Deathparticles: {fileID: 6231257127552746212, guid: 80d9de5f31d8c2249b40d2143533fdfe, type: 3}
-  Invulnerable:
-    Duration: 1
-    CurrentProgress: 0
-  _currentHealth: 10
-  _canDamage: 1
 --- !u!70 &5770227811893287044
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -248,6 +232,121 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.54, y: 0.52}
   m_Direction: 0
+--- !u!82 &-4773562089403980841
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2948517971213267020}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0fb25a818a6452742b08a18bd549d703, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &5793469002055834647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2948517971213267020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a8e0ad46fe9bde43aa1c36b557a4e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Deathparticles: {fileID: 6231257127552746212, guid: 80d9de5f31d8c2249b40d2143533fdfe, type: 3}
+  Invulnerable:
+    Duration: 1
+    CurrentProgress: 0
+  _currentHealth: 5
+  _canDamage: 1
+  monsterdie: {fileID: 446577434332975309, guid: 46942f3ca83fabf429fa28ec65879b50, type: 3}
 --- !u!1 &5142888169712525692
 GameObject:
   m_ObjectHideFlags: 0

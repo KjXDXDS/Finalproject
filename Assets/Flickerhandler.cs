@@ -70,12 +70,12 @@ public class Flickerhandler : MonoBehaviour
             if (colorFlicker) 
             {
                 _spriteRenderer.color = _flickerColor;
-                Debug.Log("test");
+               
             }
             else
             {
                 _spriteRenderer.color = _originalColor;
-                Debug.Log("test1");
+                
 
             }
 
