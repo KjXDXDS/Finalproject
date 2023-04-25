@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19f0a3514104a5348acd0dd50a22c699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 5
+  Acceleration: 9
   Jumpforce: 50
   MaxSlopeAngle: 30
   GroundLayerMask:
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e23f74513dcfcd4682c6ad1d0d705ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 2
+  Damage: 5
   TargetLayerMask:
     serializedVersion: 2
     m_Bits: 64

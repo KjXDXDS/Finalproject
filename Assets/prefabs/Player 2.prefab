@@ -278,6 +278,7 @@ MonoBehaviour:
   slip: {fileID: 6200000, guid: 39cce88e69b1c89479219368b8ea4c30, type: 2}
   IsGrounded: 1
   _lastSlopAngle: 0
+  _audioClip: {fileID: 0}
   _slopeAngle: 0
   _isOnSlope: 0
   _canWalkOnSlope: 0
